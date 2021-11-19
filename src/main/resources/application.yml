@@ -1,0 +1,18 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config-server
+#  profiles:  caso seja config local
+#    active:
+#      - native
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/cristianmayco/code-config-server
+#          username: para repositorios privados
+#          password:
+          default-label: main
+          search-paths:
+            - 'greeting-service*'
